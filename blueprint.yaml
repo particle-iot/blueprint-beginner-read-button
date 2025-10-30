@@ -1,0 +1,39 @@
+slug: blueprint-beginner-read-button
+type: Tutorial
+category: "GPIO & Inputs"
+expertiseLevel: "Beginner"
+tags: ["Button", "GPIO", "Pull-up", "Publish", "Debounce"]
+icon: assets/hero.jpg
+gitrepo: https://github.com/particle-iot/blueprint-beginner-read-button
+name: "Read Button & Toggle LED"
+shortDescription: "Use a push button with internal pull-up to toggle the LED and publish button state changes."
+version: 1.0.0
+models: []
+language: ["C++"]
+cloudServices: []
+integrations: []
+supportedDevices:
+  - name: Any Wi-Fi or Cellular Device
+    link: https://docs.particle.io
+webIdeLink:
+webSetupLink:
+hardwareDependencies:
+  - name: Supported Particle device
+  - name: Push button (momentary)
+  - name: Jumper wires
+introduction: |
+  This beginner blueprint reads a push button using an internal pull-up resistor
+  (or optional external pull-up), debounces it, toggles the onboard LED on press,
+  and publishes button state changes for observability.
+description: |
+  The button is wired between GPIO D2 and GND by default; INPUT_PULLUP makes the
+  logic active-LOW. A software debounce confirms stable transitions. On press, the
+  firmware toggles the LED and publishes `led_state`; on any change, it publishes
+  `button_state` with "PRESSED" or "RELEASED".
+additionalResources:
+  - title: pinMode / INPUT_PULLUP
+    link: https://docs.particle.io/reference/device-os/firmware/#pinmode-
+  - title: digitalRead / digitalWrite
+    link: https://docs.particle.io/reference/device-os/firmware/#digitalread-
+  - title: Particle.publish
+    link: https://docs.particle.io/reference/device-os/firmware/#particle-publish-
