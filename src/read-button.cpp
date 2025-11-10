@@ -32,18 +32,17 @@
 #include "Particle.h"
 
 SYSTEM_MODE(AUTOMATIC);
-SYSTEM_THREAD(ENABLED);
+#ifndef SYSTEM_VERSION_v620
+SYSTEM_THREAD(ENABLED); // System thread defaults to on in 6.2.0 and later and this line is not required
+#endif
 SerialLogHandler logHandler(LOG_LEVEL_INFO); // View with: particle serial monitor --follow
 
 // -------------------------------------------------------------------
 // Hardware configuration
 // -------------------------------------------------------------------
-// LED pin: prefer LED_BUILTIN if defined, otherwise D7
-#ifndef LED_BUILTIN
-  #define LED_PIN D7
-#else
-  #define LED_PIN LED_BUILTIN
-#endif
+// Use the onboard LED connected to D7 if available or change it to a different pin
+#define LED_PIN D7
+
 
 // Button pin (change if you wired to a different GPIO)
 #define BUTTON_PIN D2
@@ -64,7 +63,7 @@ void publishButtonState(bool pressed) {
 }
 void publishLedState() {
     const char* state = ledOn ? "ON" : "OFF";
-    Particle.publish("led_state", state, PRIVATE);
+    Particle.publish("led_state", state);
     Log.info("Published led_state: %s", state);
 }
 

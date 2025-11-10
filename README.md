@@ -84,3 +84,4 @@ Event: button_state   Data: RELEASED
 - Change `BUTTON_PIN` for your wiring.  
 - Replace polling with an interrupt (`attachInterrupt`) plus a debounce timer.  
 - Add a publish rate limit to prevent noisy hardware from flooding events.
+- Use a dedicated debounce library for an external button - > [https://github.com/rickkas7/DebounceSwitchRK](https://github.com/rickkas7/DebounceSwitchRK)
