@@ -3,7 +3,7 @@ type: Tutorial
 category: "GPIO & Inputs"
 expertiseLevel: "Beginner"
 tags: ["Button", "GPIO", "Pull-up", "Publish", "Debounce"]
-icon: assets/hero.jpg
+icon: assets/button.svg
 gitrepo: https://github.com/particle-iot/blueprint-beginner-read-button
 name: "Read Button & Toggle LED"
 shortDescription: "Use a push button with internal pull-up to toggle the LED and publish button state changes."
