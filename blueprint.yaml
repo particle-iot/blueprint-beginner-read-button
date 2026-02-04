@@ -1,8 +1,8 @@
 slug: blueprint-beginner-read-button
 type: Tutorial
-category: "GPIO & Inputs"
+category: "GPIO & inputs"
 expertiseLevel: "Beginner"
-tags: ["Button", "GPIO", "Pull-up", "Publish", "Debounce"]
+tags: ["GPIO", "Publish"]
 icon: assets/button.svg
 gitrepo: https://github.com/particle-iot/blueprint-beginner-read-button
 name: "Read Button & Toggle LED"
